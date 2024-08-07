@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add Vaccination Center</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="name">Center Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" required></textarea><br><br>
+
+    <label for="opening_time">Opening Time:</label>
+    <input type="time" id="opening_time" name="opening_time" required><br><br>
+
+    <label for="closing_time">Closing Time:</label>
+    <input type="time" id="closing_time" name="closing_time" required><br><br>
+
+    <button type="submit">Add Center</button>
+</form>
+<a href="{% url 'admin_dashboard' %}">Back to Admin Dashboard</a>
+{% endblock %}
