@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dosage Details</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Vaccination Center</th>
+            <th>Address</th>
+            <th>Total Doses Administered</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for detail in details %}
+        <tr>
+            <td>{{ detail.center.name }}</td>
+            <td>{{ detail.center.address }}</td>
+            <td>{{ detail.total_doses }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<a href="{% url 'admin_dashboard' %}">Back to Admin Dashboard</a>
+{% endblock %}

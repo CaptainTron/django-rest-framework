@@ -9,15 +9,15 @@ def user_signup(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            if user.is_admin:
-                return redirect('admin_dashboard')
-            else:
-                return redirect('user_dashboard')
-        else:
-            messages.error(request, 'Invalid username or password.')
+        
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username already exists. Please choose a different one.')
+            return render(request, 'signup.html')
+        
+        user = User.objects.create_user(username=username, password=password)
+        login(request, user)
+        messages.success(request, 'Account created successfully. Welcome!')
+        return redirect('user_dashboard')
     return render(request, 'signup.html')
 
 
@@ -94,6 +94,7 @@ def remove_center(request, center_id):
 @login_required
 def dosage_details(request):
     if not request.user.is_admin:
+        messages.error(request, 'You do not have permission to view dosage details.')
         return redirect('user_dashboard')
     centers = VaccinationCenter.objects.all()
     details = []
