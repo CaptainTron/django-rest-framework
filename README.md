@@ -17,4 +17,7 @@ This project is a web application for covid vaccination booking. It is implement
 - Login: Admins have a separate login.
 - Add Vaccination Centres: Admins can add new vaccination centers.
 - Get dosage details: Admins can view dosage details grouped by centers.
-- Remove vaccination centers: Admins can remove vaccination centers.
+- Remove vaccination centers: Admins can remove vaccination centers. 
+
+### DB schema
+![alt text](image.png)

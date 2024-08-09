@@ -5,6 +5,7 @@ from .models import User, VaccinationCenter, VaccinationSlot, Booking
 from django.db.models import F
 from django.contrib import messages
 
+# These are different views that are used to render the templates
 def user_signup(request):
     if request.method == 'POST':
         username = request.POST['username']
