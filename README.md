@@ -20,4 +20,54 @@ This project is a web application for covid vaccination booking. It is implement
 - Remove vaccination centers: Admins can remove vaccination centers. 
 
 ### DB schema
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/1cc5060f-7c19-46f6-8b65-141038ac30ba)
+
+### Project Structure
+```
+.
+├── README.md
+├── covid_vaccination_booking
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── settings.cpython-310.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   └── wsgi.cpython-310.pyc
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── db.sqlite3
+├── image.png
+├── manage.py
+├── requirement.txt
+└── vaccination
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-310.pyc
+    │   ├── admin.cpython-310.pyc
+    │   ├── apps.cpython-310.pyc
+    │   ├── models.cpython-310.pyc
+    │   ├── urls.cpython-310.pyc
+    │   └── views.cpython-310.pyc
+    ├── admin.py
+    ├── apps.py
+    ├── migrations
+    │   ├── 0001_initial.py
+    │   ├── __init__.py
+    │   └── __pycache__
+    │       ├── 0001_initial.cpython-310.pyc
+    │       └── __init__.cpython-310.pyc
+    ├── models.py
+    ├── templates
+    │   ├── add_center.html
+    │   ├── admin_dashboard.html
+    │   ├── base.html
+    │   ├── dosage_details.html
+    │   ├── login.html
+    │   ├── signup.html
+    │   └── user_dashboard.html
+    ├── tests.py
+    ├── urls.py
+    └── views.py
+```
